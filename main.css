@@ -1,0 +1,172 @@
+*{
+    box-sizing: border-box;
+}
+
+html{
+    height: 100%;
+}
+
+img{
+    display: block;
+    height: auto;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 0;
+    background-image: url("./images/back-to-future.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.individually-btn{
+    box-shadow: 0px 0px 39px 24px rgba(255, 255, 255, 1);
+}
+.text-fw-500{
+    font-weight: 500;
+}
+
+.start-select{
+    background-image: url("./images/arrw-to-bottom.svg");
+    background-size: 24px 24px;
+    border: none;
+    border-bottom: white solid 3px;
+}
+.start-select:focus{
+    box-shadow: 0px 0px 29px 18px rgba(255, 255, 255, 0.74);
+}
+
+.start-btn{
+    transition: box-shadow 0.3s ease;
+}
+.start-btn:hover{
+    box-shadow: 0px 0px 29px 18px rgba(255, 255, 255, 0.74);
+}
+
+.bg-grey{ 
+    background-color: #d7d9d6;
+}
+
+.hide{
+    visibility: hidden;
+}
+
+.answer-img{
+    display: none;
+    width: 60px;
+    height: 60px;
+}
+
+.correct .correct-img{
+    display: inline-block;
+}
+.wrong .wrong-img{
+    display: inline-block;
+}
+.correct ~ .correct-img{
+    display: inline-block;
+}
+.wrong ~ .wrong-img{
+    display: inline-block;
+}
+.correct{
+    transition: background-color 1s ease;
+    animation: correct-shaking 0.5s forwards;
+}
+.wrong{
+    transition: background-color 1s ease;
+    animation: error-shaking 0.35s forwards;
+}
+
+.box-disabled{
+    pointer-events: none;
+    opacity: 0.5;
+    background-color: #ccc;
+}
+
+@keyframes correct-shaking {
+    0% { 
+        transform: translateY(0) 
+    }
+    50% { 
+        transform: translateY(20px) 
+    }
+    100% { 
+        transform: translateY(0) 
+    }
+}
+@keyframes error-shaking {
+    0% { 
+        transform: translateX(0) 
+    }
+    25% { 
+        transform: translateX(10px) 
+    }
+    50% { 
+        transform: translateX(-10px) 
+    }
+    75% { 
+        transform: translateX(10px) 
+    }
+    100% { 
+        transform: translateX(0) 
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .answer-img{
+        width: 45px;
+        height: 45px;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .answer-img{
+        width:  30px;
+        height: 30px;
+    }
+}
+@media only screen and (max-width: 510px) {
+    .answer-img{
+        width: 15px;
+        height: 15px;
+    }
+}
+
+.game-over-box{
+    width: 100%;
+    height: 100%;
+    background-image: url("./images/Game-Over.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.game-over-img{
+    visibility: hidden;
+}
+
+.show-img{
+    visibility: visible;
+}
+
+.again-btn{
+    width: 60px;
+    height: 60px;
+    background-image: url("./images/replay.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.you-won-box{
+    width: 100%;
+    height: 100%;
+    background-image: url("./images/Frame3.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="./main.css">
+    <title> Exam - 5 || Road Signs</title>
+</head>
+<body>
+
+    <!-- Your Code Here -->
+
+    <div class="js-main-menu position-absolute top-50 start-50 translate-middle">
+        <div class="d-flex flex-column align-items-center p-3">
+            <button class="js-individually-btn individually-btn text-fw-500 py-2 px-3 border-0 bg-white fs-4 rounded-5" type="button">
+                Индивидуально
+            </button>
+    
+            <a class="text-fw-500 d-inline-block mt-5 text-decoration-none text-white fs-4" href="#">
+                Создать Команду
+            </a>
+            <a class="text-fw-500 d-inline-block mt-5 text-decoration-none text-white fs-4" href="#">
+                Выйти   
+            </a>
+        </div>
+    </div>
+    
+    <div class="js-start-menu position-absolute top-50 start-50 translate-middle d-none">
+        <form class="js-start-form d-flex flex-column align-items-center p-3" method="get" action="#" autocomplete="off">
+            <label class="text-white fs-4 mb-4" for="level">Сложность</label>
+            <select class="js-level-select start-select text-fw-500 fs-4 form-select form-select-lg bg-transparent text-white mb-5" id="level" aria-label="Choose Level">
+                <option class="bg-dark" value="easy">Легкий</option>
+                <option class="bg-dark" value="medium">Срединий</option>
+                <option class="bg-dark" value="hard">Сложный</option>
+            </select>
+    
+            <label class="text-white fs-4 mb-4" for="set_time">Время</label>
+            <select class="js-time-select start-select text-fw-500 fs-4 form-select form-select-lg bg-transparent text-white mb-5" id="set_time" aria-label="Choose time">
+                <option class="bg-dark" value="3-min">3 МИН</option>
+                <option class="bg-dark" value="8-min">8 МИН</option>
+                <option class="bg-dark" value="10-min">10 МИН</option>
+            </select>
+    
+            <button class="start-btn d-block w-100 text-fw-500 fs-3 border-0 py-2 px-3 rounded-5" type="submit">Старт</button>
+        </form>
+    </div>
+    
+    
+    <div class="js-question-menu p-3 d-none">
+        <div class="container">
+            <div class="d-flex flex-column flex-sm-row justify-content-sm-between mb-3">
+                <div class="d-flex flex-column flex-sm-row">
+                    <strong class="js-score me-3 text-white">
+                        Score: 0
+                    </strong>
+                    <strong class="js-attempts me-3 text-white">
+                        Attempts: 0
+                    </strong>
+                </div>
+                <strong class="js-time  text-white">
+                    Осталось: 0
+                </strong>
+            </div>
+    
+            <div class="bg-secondary ms-sm-auto p-4 rounded-3">
+                <div class="bg-grey mb-3 px-1 py-3 rounded-3">
+                    <p class="js-question mb-0 text-center fs-5">
+
+                    </p>
+                </div>
+
+                <ul class="js-test-list row gx-2 mb-0 list-unstyled">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="js-game-over-box game-over-box d-none">
+        <div class="position-absolute top-50 start-50 translate-middle">
+            <img class="js-game-over-img game-over-img mx-auto img-fluid" src="./images/Game-Over-text.png" width="600" height="300" alt="">
+            <div>
+                <div class="d-flex flex-column flex-md-row text-center text-md-start justify-content-center">
+                    <strong class="js-game-over-score me-3 fs-4 text-white">
+                        Score: 0
+                    </strong>
+                    <strong class="js-game-over-attempts me-3 fs-4 text-white">
+                        Attempts: 0
+                    </strong>
+                    <strong class="js-game-over-time fs-4 text-white">
+                        Осталось: 0
+                    </strong>
+                </div>
+                <button class="js-over-again-btn again-btn d-block mt-4 mx-auto border-0 bg-transparent">
+    
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="js-you-win-box you-won-box d-none">
+        <div class="position-absolute top-50 start-50 translate-middle">
+            <div class="flex-column flex-md-row text-center text-md-start">
+                <strong class="js-win-score me-3 fs-4 text-white">
+                    Score: 0
+                </strong>
+                <strong class="js-win-attempts me-3 fs-4 text-white">
+                    Attempts: 0
+                </strong>
+                <strong class="js-win-time fs-4 text-white">
+                    Осталось: 0
+                </strong>
+            </div>
+            <button class="js-win-again-btn again-btn d-block mt-4 mx-auto border-0 bg-transparent">
+    
+            </button>
+        </div>
+    </div>
+
+    <template class="js-test-template">
+        <li class="js-test-item col-6 col-md-3 col-lg-2 mb-3 d-flex align-items-stretch">
+            <div class="bg-grey  js-btn-box position-relative d-flex align-items-center justify-content-center p-2 rounded-3">
+                <img class="js-images img-fluid" src="./images/signs/yol_bering.gif" alt="">
+                <img class="js-answer-img answer-img correct-img position-absolute end-0 bottom-0 rounded-circle" src="./images/checkmark.gif" width="60" height="60" alt="">
+                <img class="js-answer-img answer-img wrong-img position-absolute end-0 bottom-0 rounded-circle" src="./images/error.png" width="60" height="60" alt="">
+            </div>
+        </li>
+    </template>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <!-- Kerakli Array shu fileda -->
+    <script src="./signs.js"></script>
+
+    <!-- Code yoziladigan js file shu -->
+    <script src="./main.js"></script>
+</body>
+</html>
